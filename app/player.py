@@ -1,6 +1,10 @@
+"""
+Player class that sets up user id and name
+"""
+
 class Player:
-    def __init__(self, id: str, name: str):
-        self._uid = id
+    def __init__(self, uid: str, name: str):
+        self._uid = uid
         self._name = name
 
     @property

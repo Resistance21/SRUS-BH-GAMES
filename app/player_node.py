@@ -1,3 +1,8 @@
+"""
+Player node that holds the player class and references to either a
+next and or previous node reference
+"""
+
 from .player import Player
 
 class PlayerNode:

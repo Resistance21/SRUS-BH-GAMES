@@ -1,6 +1,7 @@
+"""
+List that holds a collection of the current player nodes 
+"""
 from .player_node import PlayerNode
-from .player import Player
-
 class PlayerList:
     def __init__(self):
         self._head : PlayerNode | None = None
@@ -8,7 +9,7 @@ class PlayerList:
         self.display = True
 
     def is_empty(self):
-        if(self._head == None):
+        if self._head is None:
             return True
         return False
     
@@ -29,7 +30,7 @@ class PlayerList:
         
     
     def insert_node(self, player : PlayerNode):
-        if(self.is_empty()):
+        if self.is_empty():
             self.head = player
             self.last = player
         else:
@@ -38,7 +39,7 @@ class PlayerList:
             self.head = player
 
     def insert_node_last(self,player: PlayerNode):
-        if(self.is_empty()):
+        if self.is_empty():
             self.head = player
             self.last = player
         else:
@@ -47,7 +48,7 @@ class PlayerList:
             self.last = player
     
     def delete_player_from_head(self):
-        if(self.is_empty()):
+        if self.is_empty() :
             return
         
         if self.head.next:
@@ -57,7 +58,7 @@ class PlayerList:
             self.head = None
 
     def delete_player_from_last(self):
-        if(self.is_empty()):
+        if self.is_empty() :
             return
         else:
             self.last.previous.next = None

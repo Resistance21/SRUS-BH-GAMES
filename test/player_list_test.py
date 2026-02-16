@@ -1,3 +1,7 @@
+"""
+Player list test cases
+"""
+
 import unittest
 from app.player import Player
 from app.player_list import PlayerList
