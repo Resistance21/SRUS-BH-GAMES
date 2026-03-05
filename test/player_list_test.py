@@ -88,6 +88,8 @@ class TestPlayerList(unittest.TestCase):
         example_list.head_node = self.example_player_list.head
         real_list.head_node = self.player_list.head
 
+        #looping through eample list and real list
+        #checking each node matches
         while example_list.head_node.next and real_list.head_node.next:
             self.assertEqual(example_list.head_node, real_list.head_node)
             example_list.head_node = example_list.head_node.next
