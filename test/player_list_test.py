@@ -1,6 +1,7 @@
 """
 Player list test cases
 to run test use 
+while in root folder
 python -m unittest -v test.player_list_test
 """
 
