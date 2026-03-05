@@ -1,5 +1,7 @@
 """
 player class test cases
+to  run test use 
+python -m unittest -v test.player_test
 """
 import unittest
 from app.player import Player
@@ -7,6 +9,7 @@ from app.player_list import PlayerList
 from app.player_node import PlayerNode
 
 class TestPlayerClass(unittest.TestCase):
+    #set up date to be used for all tests
     def setUp(self):
         self.player = Player('32', 'test')
 

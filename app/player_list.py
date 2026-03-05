@@ -80,11 +80,11 @@ class PlayerList:
     '''
     def delete_player_at_key(self, key:str):
         key_found = False
-        no_key = False
+        # no_key = False
         #recursive function
         def find_key(player:PlayerNode):
             nonlocal key_found
-            nonlocal no_key
+            # nonlocal no_key
 
             if player.key == key:
                 if player == self._head:
@@ -114,7 +114,7 @@ class PlayerList:
         #success and fail messages
         if key_found: 
             print(f'player deleted at key: {key}')
-        if no_key:
+        else:
             print(f'no player found with key: {key}')
 
     #prints out the current player list either forward or backward
@@ -130,7 +130,11 @@ class PlayerList:
             while current_node:
                 nodes.append(f'Player key: {current_node.key} Player Name: {current_node.name}')
                 current_node = current_node.previous
-        print(f'player list:\n{'\n'.join(nodes)}')
+        # print the formatted list to the console
+        print(f"player list:\n{'\n'.join(nodes)}")
+        # return the formatted list, if extra use it needed
+        # aswell as making testing easier
+        return f"player list:\n{'\n'.join(nodes)}"
 
     #string representation of the list
     def __str__(self):

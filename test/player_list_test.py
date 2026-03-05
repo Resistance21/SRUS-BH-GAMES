@@ -1,5 +1,7 @@
 """
 Player list test cases
+to run test use 
+python -m unittest -v test.player_list_test
 """
 
 import unittest
@@ -9,6 +11,7 @@ from app.player_node import PlayerNode
 
 class TestPlayerList(unittest.TestCase):
     def setUp(self):
+        #setting up data that can be used for all tests
         super().setUp()
         self.player_list = PlayerList()
         self.player_one = Player('1', 'player one')
@@ -116,6 +119,39 @@ class TestPlayerList(unittest.TestCase):
 
         self.assertEqual(self.player_list.last.key, '2')
 
+    def test_display_text_forawrd_true(self):
+        self.player_list.insert_node(self.player_node_one)
+        self.player_list.insert_node(self.player_node_two)
+        self.player_list.insert_node(self.player_node_three)
+        self.player_list.insert_node(self.player_node_four)
+        self.player_list.insert_node(self.player_node_five)
+
+        #expected outcome from display return
+        expected_outcome = ("player list:\n"
+            "Player key: 5 Player Name: player five\n"
+            "Player key: 4 Player Name: player four\n"
+            "Player key: 3 Player Name: player three\n"
+            "Player key: 2 Player Name: player two\n"
+            "Player key: 1 Player Name: player one"
+        )
+        self.assertEqual(expected_outcome, self.player_list.display())
+
+    def test_display_text_forawrd_false(self):
+        self.player_list.insert_node(self.player_node_one)
+        self.player_list.insert_node(self.player_node_two)
+        self.player_list.insert_node(self.player_node_three)
+        self.player_list.insert_node(self.player_node_four)
+        self.player_list.insert_node(self.player_node_five)
+
+        #expected outcome from display return
+        expected_outcome = ("player list:\n"
+            "Player key: 1 Player Name: player one\n"
+            "Player key: 2 Player Name: player two\n"
+            "Player key: 3 Player Name: player three\n"
+            "Player key: 4 Player Name: player four\n"
+            "Player key: 5 Player Name: player five"
+        )
+        self.assertEqual(expected_outcome, self.player_list.display(False))
 
 
 if __name__ == '__main__':
